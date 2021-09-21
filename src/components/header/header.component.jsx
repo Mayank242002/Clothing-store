@@ -5,7 +5,7 @@ import { ReactComponent as Logo } from '../../assets/4.3 crown.svg';
 import { auth } from '../../firebase/firebase.utils';
 import { connect } from 'react-redux';
 
-function Header({ CurrentUser }) {
+function Header({ currentUser }) {
   return (
     <div className='header'>
       <Link className='logo-container' to='/'>
@@ -18,7 +18,7 @@ function Header({ CurrentUser }) {
         <Link className='option' to='/shop'>
           CONTACT
         </Link>
-        {CurrentUser ? (
+        {currentUser ? (
           <div className='option' onClick={() => auth.signOut()}>
             SIGN OUT
           </div>
